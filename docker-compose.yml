@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  nginx:
+    image: demo
+    container_name: demo
+    build:
+      context: .
+    ports:
+      - "3000:80"
+    networks:
+      - demo
+    volumes:
+      - C:\Users\vstpalu\nginx:/usr/share/nginx/html:rw    
+networks: 
+  demo:
+    driver: bridge
